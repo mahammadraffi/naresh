@@ -1,0 +1,65 @@
+   <table class="table table-bordered">
+  <thead > 
+      <tr>
+        <th>index</th>
+        <th >Name</th>
+        <th>age</th>
+        <th>sal</th>
+        <th>remove</th>
+      </tr>
+  </thead>
+     <tr *ngFor="let e of user;index as k"      [ngStyle]="{'color':'red','padding':'10px','background-color':e.age===23 ? 'white':'yellow',border:'2px solid #111'}">
+  
+         <td><span class="badge badge-success">{{k+1}}</span></td>
+         <td>{{e.name}}</td>
+         <td>{{e.age}}</td>
+         <td>{{e.sal}}</td>
+         <td><button class="btn btn-danger" (click)="removeEmp(e)">remove</button></td>
+     </tr>
+</table>
+<button class="btn btn-success btn-block " (click)="addemp()">submit</button>
+
+<!-- angular 2 way -->
+<!-- <div *ngIf="user.length>0">
+  employees are here 
+</div>
+<div *ngIf="user.length==0">
+   no employees are here 
+  </div> -->
+ 
+
+   <!-- angular 4 way  using else -->
+ <!-- <div *ngIf="user.length>0;then emp else noemp"></div>
+ <ng-template #emp>
+   <h1 style="color: green;">emp are here</h1>
+ </ng-template>  
+
+
+ <ng-template #noemp>
+    <h1 style="color: red;"> no emp are here</h1>
+  </ng-template>  -->
+
+  <!-- switch case -->
+  <!-- <span [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">
+      red color
+    </p>
+    <p *ngSwitchCase="'green'">
+        green color
+      </p>
+      <p *ngSwitchCase="'black'">
+          black color
+        </p>
+        <p *ngSwitchDefault>
+          no color here
+        </p>
+ </span> -->
+
+<!-- 
+ <div *ngIf="user.length>0">
+   user are here
+ </div>
+ <div *ngIf="user.length==0">
+   user are not here
+ </div> -->
+ 
